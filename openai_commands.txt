@@ -1,0 +1,7 @@
+File tool: openai tools fine_tunes.prepare_data -f C:\Users\Pierre-Hadrien\NanoGPT\nba_stats.jsonl
+
+Create fine tune: openai -k KEY api fine_tunes.create -t C:\Users\Pierre-Hadrien\NanoGPT\nba_stats.jsonl -m davinci
+
+Access status openai -k KEY api fine_tunes.follow -i ft-monUqY2YLoe6WLewtyUrB2U5A
+
+Testing: openai api completions.create -m davinci:ft-personal-2023-05-17-10-18-46 -p"Generate specific player stats for player: Lebron James" -M 220

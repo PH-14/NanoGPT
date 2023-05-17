@@ -1,6 +1,6 @@
 import os
 import openai
-openai.api_key = "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"
+openai.api_key = "YOUR_API_KEY"
 
 messages = [
     {"role": "system", "content": "You're ChatGPT, an AI made by OpenAI"}
