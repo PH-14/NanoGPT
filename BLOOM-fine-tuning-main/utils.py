@@ -8,10 +8,10 @@ from transformers import Trainer
 
 class ModifiedTrainer(Trainer):
     def compute_loss(self, model, inputs, return_outputs=False):
-        input_ids = inputs["input_ids"].to(model.device)
-        attention_mask = torch.ones_like(input_ids).bool().to(model.device)
-        labels = inputs["input_ids"].to(model.device)
-        
+        input_ids = inputs["input_ids"].to("cpu")
+        attention_mask = torch.ones_like(input_ids).bool().to("cpu")
+        labels = inputs["input_ids"].to("cpu")
+
         return model(
             input_ids=input_ids,
             attention_mask=attention_mask,
